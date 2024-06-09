@@ -25,7 +25,7 @@ class UserController extends Controller{
     {
         $user = new User($this->getDB());
         $user = $user->findByColumn($_POST['email'], 'email');
-
+        var_dump($user);
         if(password_verify($_POST['password'],$user->password) ){      
            if($user->role == true)
            {
